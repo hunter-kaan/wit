@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  min-width: 300px;
+}
+#header {
+  background: #ffffff;
+}
+#header .navbar {
+  border: 0 none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+#header .navbar .navbar-brand {
+  background: transparent url('../img/wit-b.png') no-repeat scroll left center / auto 40px;
+  width: 204px;
+}
+#header .navbar.navbar-default .navbar-nav > .open > a,
+#header .navbar.navbar-default .navbar-nav .active > a {
+  box-shadow: none;
+}
+#header .navbar.navbar-default .navbar-nav > .open > a {
+  background: #ffffff;
+}
+#header .navbar.navbar-default .navbar-nav .active > a {
+  background: #e2e2e2;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background: #ffffff;
+  color: #000000;
+}
+#content {
+  min-height: calc(100% - 50px - 50px);
+  padding: 20px;
+}
+#footer {
+  background-color: #ffffff;
+  color: #6a6a6a;
+}
+#footer .logo {
+  background: transparent url('../img/wit-g.png') no-repeat scroll left center / auto 25px;
+  height: 50px;
+  display: block;
+}
+#footer .copyright {
+  font-size: 12px;
+  margin-top: 16.5px;
+}
+@media (max-width: 767px) {
+  #footer .logo {
+    background-position: center bottom;
+    background-size: auto 40px;
+  }
+  #footer .copyright {
+    margin-top: 0;
+    margin-right: 20px;
+  }
+}
+a {
+  outline: hidden !important;
+}
+.jumbotron {
+  margin-bottom: 20px;
+  color: #ffffff;
+  background: #fe8c00;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fe8c00, #f83600);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fe8c00, #f83600);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+.jumbotron .btn-primary {
+  background-image: none;
+  background-color: #f1c40f;
+  border-color: #dab10d;
+}
+.jumbotron .btn-primary:hover,
+.jumbotron .btn-primary:focus {
+  background-color: #d35400;
+  border-color: #ba4a00;
+}
+.steps .step .wrap {
+  background-color: #ffffff;
+  padding: 20px 20px 50px 20px;
+  min-height: 180px;
+}
+.steps .step .wrap footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+body {
+  color: #424242;
+}

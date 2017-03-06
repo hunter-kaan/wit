@@ -1,0 +1,146 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-width: 300px;
+}
+
+#header {
+	background: #ffffff;
+
+	.navbar {
+		border: 0 none;
+		box-shadow: none;
+		margin-bottom: 0;
+
+		.navbar-brand {
+			background: transparent url('../img/wit-b.png') no-repeat scroll left center / auto 40px;
+			width: 204px;
+		}
+
+		&.navbar-default {
+			.navbar-nav {
+				> .open,
+				.active {
+					> a {
+						box-shadow: none;
+					}
+				}
+
+				> .open {
+					> a {
+						background: #ffffff;
+					}
+				}
+
+				.active {
+					> a {
+						background: #e2e2e2;
+					}
+				}
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+	> li {
+		> a {
+			&:hover,
+			&:focus {
+				background: #ffffff;
+				color: #000000;
+			}
+		}
+	}
+}
+
+#content {
+	min-height: ~"calc(100% - 50px - 50px)";
+	padding: 20px;
+}
+
+#footer {
+	background-color: #ffffff;
+	color: #6a6a6a;
+
+	.logo {
+		background: transparent url('../img/wit-g.png') no-repeat scroll left center / auto 25px;
+		height: 50px;
+		display: block;
+	}
+
+	.copyright {
+		font-size: 12px;
+		margin-top: 16.5px;
+	}
+
+	@media (max-width: 767px) {
+		.logo {
+			background-position: center bottom;
+			background-size: auto 40px;
+		}
+
+		.copyright {
+			margin-top: 0;
+			margin-right: 20px;
+		}
+	}
+}
+
+a {
+	outline: hidden !important;
+}
+
+.jumbotron {
+	margin-bottom: 20px;
+	color: #ffffff;
+
+	background: #fe8c00; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.btn-primary {
+		@background: #f1c40f;
+		@border: darken(#f1c40f, 5%);
+
+		background-image: none;
+		background-color: @background;
+		border-color: @border;
+
+		&:hover,
+		&:focus {
+			background-color: #d35400;
+			border-color: darken(#d35400, 5%);
+		}
+	}
+}
+
+.steps {
+	.step {
+		.wrap {
+			background-color: #ffffff;
+			padding: 20px 20px 50px 20px;
+			min-height: 180px;
+
+			footer {
+				position: absolute;
+				bottom: 20px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+
+// TODO: remove after update bootstrap theme
+body {
+	color: #424242;
+}
