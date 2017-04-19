@@ -99,8 +99,8 @@ a {
 	color: #ffffff;
 
 	background: #fe8c00; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #fe8c00 , #f83600); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #fe8c00 , #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to left, #fe8c00, #f83600); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #fe8c00, #f83600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 	p:last-child {
 		margin-bottom: 0;
@@ -118,6 +118,87 @@ a {
 		&:focus {
 			background-color: #d35400;
 			border-color: darken(#d35400, 5%);
+		}
+	}
+
+	a {
+		&:not(.btn) {
+			color: #ffffff;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.summary {
+		padding: 10px 0;
+	}
+
+	.list-group {
+		.wit-item {
+			opacity: 0.7;
+		}
+
+		.delete-error {
+			margin: 0 -10px;
+		}
+
+		.wit-deleted {
+			cursor: pointer;
+			margin: 15px -10px;
+		}
+
+		.list-group-item {
+			background: rgba(255, 255, 255, .3);
+			padding-left: 30px;
+
+			&.selected {
+				background: rgba(255, 255, 255, .5);
+				border-color: #f83600;
+
+				.checker {
+					&::before {
+						content: '\e013';
+						position: relative;
+						left: 0;
+						top: 1px;
+						color: #f83600;
+						margin-right: 5px;
+						margin-left: -17px;
+						display: inline-block;
+						font-family: 'Glyphicons Halflings';
+						font-style: normal;
+						font-weight: normal;
+						line-height: 1;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+				}
+			}
+
+			.wit-id,
+			.wit-value {
+				&::before {
+					content: attr(data-propery-name) + ':';
+					color: #f83600;
+					display: block;
+					text-transform: uppercase;
+					font-size: 10px;
+					font-weight: bold;
+				}
+			}
+
+			.wit-id {
+				&::before {
+					display: inline-block;
+					margin-right: 7px;
+				}
+			}
+
+			color: #000;
+			border-color: #fe8c00;
 		}
 	}
 }

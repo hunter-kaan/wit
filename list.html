@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>When-If-Then</title>
+	<title>Список When-If-Then</title>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.css">
@@ -31,14 +31,16 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Главная <span class="sr-only">(текущая)</span></a></li>
-						<li class="dropdown">
+						<li><a href="index.html">Главная <span class="sr-only">(текущая)</span></a></li>
+						<li class="active dropdown">
 							<a href="list.html" class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false">Карточки <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="list.html"><span class="glyphicon glyphicon-list"></span> Список</a></li>
+								<li class="active"><a href="list.html"><span class="glyphicon glyphicon-list"></span>
+									Список</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="list.html#add"><span class="glyphicon glyphicon-plus"></span> Добавить</a></li>
+								<li><a href="list.html#add"><span class="glyphicon glyphicon-plus"></span> Добавить</a>
+								</li>
 							</ul>
 						</li>
 						<li><a href="about.html">О проекте</a></li>
@@ -69,14 +71,25 @@
 
 
 <div id="content" class="container">
-	<div class="jumbotron">
-		<h1>When-If-Then!</h1>
-		<p>Ваш инструмент для сбора информации о предметных областях.</p>
-		<p>Несколько шагов и Ваш эксперт в нужной предметной области сможет предоставить все необходимые Вам знания.</p>
-		<p class="clearfix">
-			<a class="btn btn-primary btn-lg pull-right" href="#" role="button">Узнать больше &raquo;</a>
-		</p>
-	</div>
+	<section class="jumbotron">
+		<h1>Список WIT</h1>
+		<div id="wit-list">
+			<div class="summary clearfix">
+				<div class="pull-left">
+					<button type="button" data-toggle="modal" data-target="#modal-new-wit"
+					        class="btn btn-success btn-xs">Добавить карточку WIT
+					</button>
+
+					<a href="#" class="btn btn-default btn-xs" id="toggle-all-wit"></a>
+					<a href="#" class="btn btn-danger btn-xs hidden" id="delete-selected-wit">Удалить выделенное</a>
+				</div>
+				<div class="pull-right">
+					Всего: <span class="total-items"></span>
+				</div>
+			</div>
+			<ul class="list-group"></ul>
+		</div>
+	</section>
 
 	<!-- Example row of columns -->
 	<div class="row steps">
@@ -85,7 +98,7 @@
 				<h2>Шаг 1. Сбор данных</h2>
 				<p>Данные собираются при помощи карточек When-If-Then.</p>
 				<footer class="clearfix">
-					<a class="btn btn-default btn-sm" href="#" role="button">Подробнее &raquo;</a>
+					<button class="btn btn-default btn-sm" data-load-url="pages/step1.html" role="button">Подробнее &raquo;</button>
 				</footer>
 			</section>
 		</div>
@@ -94,7 +107,7 @@
 				<h2>Шаг 2. Изучение</h2>
 				<p>Полученные данные легко структурировать.</p>
 				<footer class="clearfix">
-					<a class="btn btn-default btn-sm" href="#" role="button">Подробнее &raquo;</a>
+					<button class="btn btn-default btn-sm" data-load-url="pages/step2.html" role="button">Подробнее &raquo;</button>
 				</footer>
 			</section>
 		</div>
@@ -103,12 +116,48 @@
 				<h2>Шаг 3. Трансформация</h2>
 				<p>Данные можно легко трансформировать в собственных целях.</p>
 				<footer class="clearfix">
-					<a class="btn btn-default btn-sm" href="#" role="button">Подробнее &raquo;</a>
+					<button class="btn btn-default btn-sm" data-load-url="pages/step3.html" role="button">Подробнее &raquo;</button>
 				</footer>
 			</section>
 		</div>
 	</div>
 </div>
+
+
+<div id="modal-new-wit" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form id="wit-form">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Добавление WIT</h4>
+				</div>
+				<div class="modal-body">
+					<div class="errors"></div>
+
+					<div class="form-group" data-field="when">
+						<label for="whenInput" class="control-label">When</label>
+						<textarea class="form-control" id="whenInput"></textarea>
+					</div>
+					<div class="form-group" data-field="if">
+						<label for="ifInput" class="control-label">If</label>
+						<textarea class="form-control" id="ifInput"></textarea>
+					</div>
+					<div class="form-group" data-field="then">
+						<label for="thenInput" class="control-label">Then</label>
+						<textarea class="form-control" id="thenInput"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+					<button type="submit" class="btn btn-primary">Сохранить</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 
 <footer id="footer">
 	<div class="container">
